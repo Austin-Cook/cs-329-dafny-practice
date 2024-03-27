@@ -24,6 +24,7 @@ module lecture
     {
       a[i] := 0;
     }
+    assert(forall i | 0 <= i < a.Length :: a[i] == 0);
 
     // when
     f(a);
@@ -31,5 +32,6 @@ module lecture
     // then
     assert(a[2] == 42);
     assert(forall i | 0 <= i < a.Length && i != 2 :: a[i] == 0);
+    expect (a[2] == 42), "ERRORL a[2] != 42";
   }
 }
